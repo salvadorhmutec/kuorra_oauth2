@@ -17,7 +17,7 @@ remote = False
 
 if remote is True: # Config remote database and remote oauth host
     db = database.db_cloud
-    host_config = 'http://kquizz.herokuapp.com/auth/%s/callback'
+    host_config = 'http://REMOTE_SERVER/auth/%s/callback'
 elif remote is False: # Config local database and local oauth host
     db = database.db_localhost
     host_config =  'http://localhost:8080/auth/%s/callback'

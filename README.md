@@ -33,6 +33,10 @@ Kuorra is a Web.py Microframework Frontend, use kuorra to create a MVC skeleton 
         - app_id 
         - app_secret
 
+4. Config remote or local use
+
+    - variable remote in app.py choose localhost or remote host
+
 
 ## Content
 
