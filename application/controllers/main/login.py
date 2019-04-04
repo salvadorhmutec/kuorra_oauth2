@@ -14,8 +14,6 @@ app_secret = app.app_secret
 # Valores asignados de id_cliente proporcionado por el proveedor en este caso google
 # En caso de trabajar con otros provedores como Facebook se cambiaran los valores 
 # En caso de trabajar con dos o mas provedores al mismo tiempo se tendran valores asiganados independientes por cada proveedor  
-# auth.parameters['google']['app_id'] = '364672633912-hbhtatjd9kbkbeaocn0902pivum4t0cd.apps.googleusercontent.com'#ID_cliente
-# auth.parameters['google']['app_secret'] = 'b_HGPbqiY-gBHSCBuS38fVau'#Secret_del_cliente  
 
 auth.parameters['google']['app_id'] = app_id
 auth.parameters['google']['app_secret'] = app_secret
@@ -37,10 +35,9 @@ class Login:
          #i = config.web.input()
 class handler(auth.handler):
   def callback_uri(self, provider):
-    """Please return appropriate url according to your app setting.
-    """
-    return 'http://localhost:8080/auth/%s/callback' % provider
-    # return 'http://salvadorhm.ddns.net:8080/auth/%s/callback' % provider
+      # Please return appropriate url according to your app setting.
+      return app.host_config % provider
+  
     # return 'http://' +  web.ctx.host + '/auth/%s/callback' % provider
 
   def on_signin(self, provider, profile):

@@ -6,11 +6,20 @@
 
 import web
 import urls
-import database
+import db_config as database
 
+# Webapp version
+webapp_version = '0.1'
 
-# Config database
-db = database.db
+# Config Remote / Localhost
+remote = False
+
+if remote is True:
+    db = database.db_cloud
+    host_config = 'http://REMOTE_SERVER/auth/%s/callback'
+elif remote is False:
+    db = database.db_localhost
+    host_config =  'http://localhost:8080/auth/%s/callback'
 
 # Activate ssl certificate
 ssl = False
@@ -28,16 +37,9 @@ refresh = 60 # seconds
 urls = urls.urls
 
 # GOOGLE API OAUTH2
-
-# Google API Token localhost
-app_id = 'YOUR ID FOR LOCALHOST'
-app_secret = 'YOUR SECRET KEY FOR LOCALHOST'
-
-'''
-# Google API Token salvadorhm.ddns.net
+# Google API Token 
 app_id = 'YOUR ID FOR CLOUD SERVER'
 app_secret = 'YOUR SECRET KEY FOR CLOUD SERVER'
-'''
 
 
 # Global values
