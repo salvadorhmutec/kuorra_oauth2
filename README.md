@@ -37,83 +37,9 @@ Kuorra is a Web.py Microframework Frontend, use kuorra to create a MVC skeleton 
 
     - variable remote in app.py choose localhost or remote host
 
+5. Check the file login.py
 
-## Content
-
-This template have the next functions
-
-### Functions
-
-+ Script for create a **kuorra_login_google** DB
-    - *users table*
-    - *sessions table*
-    - *logs table*
-    - Create an DB user: 
-        - **kuorra_google** 
-    - Create an DB password:
-        - **kuOrra.2018**
-
-+ Config one DB conection.
-
-+ Create a **users Controller**.
-
-    - *index*
-    - *view*
-    - *edit*
-    - *delete*
-    - *insert*
-    - *config*
-    - *printer*
-    - *import*
-
-
-+ Create a **main Controller**
-
-    - *auth*
-    - *index*
-    - *login*
-    - *logout*
-    - *config*
-
-+ Create a **logs Controller**
-
-    - *config*
-    - *index*
-    - *printer*
-    - *view*
-    - *url.md*
-
-+ Create a **Logs Model**
-    - *get_all_logs*
-    - *insert_logs*
-
-+ Create a **users Model**
-    - *validate_user*
-    - *get_all_users*
-    - *get_users*
-    - *delete_users*
-    - *insert_users*
-    - *edit_users*
-
-+ Create a **users View**
-    - *csv_import*
-    - *delete*
-    - *edit*
-    - *index*
-    - *insert*
-    - *master*
-    - *printer*
-    - *view*
-
-+ Create a **main View**
-    - *admin*
-    - *guess*
-    - *index*
-    - *login*
-    - *master*
-
-+ Create a **logs View**
-    - *index*
-    - *master*
-    - *printer*
-    - *view*
+    - This file is used for validate a user from proyect database, after google authenticated the user account.
+    - This file can be used for:
+        1. Validate user for the system.
+        2. Register a new user
