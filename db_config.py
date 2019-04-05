@@ -37,5 +37,3 @@ db_cloud = web.database(
     pw = db_pw_cloud,
     port = db_port_cloud
     )
-
-# Localhost config
