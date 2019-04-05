@@ -1,7 +1,6 @@
 #!/usr/bin/env python
 # -*- coding:utf-8 -*-
 
-
 import web
 import urllib
 import urlparse
@@ -41,14 +40,10 @@ class handler:
   }
 
   def auth_init(self, provider):
-    """Start the auth process
-    """
     print "auth_init(self, provider): 100"
     self._oauth2_init(provider)
 
   def auth_callback(self, provider):
-    """Callback handler for auth process
-    """
     print "auth_callback(self, provider): 101"
     self._oauth2_callback(provider)
 
@@ -95,11 +90,6 @@ class handler:
     # raise NotImplementedError
 
   def _http_get(self, url, args=None):
-    """Python HTTP GET request
-    url: fullpath, e.g., https://example.org/home
-    args (optional): dict used to build query string, e.g.,
-      {a: '1', b: '2'} => a=1&b=2
-    """
     if args == None:
       response = urllib.urlopen(url)
     else:
@@ -109,22 +99,13 @@ class handler:
     return response
 
   def _http_post(self, url, args):
-    """Python HTTP POST request
-    url: fullpath, e.g., https://example.org/home
-    args (optional): dict used to build POST data, e.g.,
-      {a: '1', b: '2'} => a=1&b=2
-    """
     data = urllib.urlencode(args)
     response = urllib.urlopen(url, data)
     print "_http_post(self, url, args): 104"
     return response
 
   def _check_provider(self, provider):
-    """Check if valid provider, app_id, and app_secret
-    """
-
     print "_check_provider(self, provider): 105"
-
     # check if the provider is supported
     if provider not in self.SUPPORTED_PROVIDERS:
       raise Exception('unsupported provider: %s' % provider)
@@ -141,10 +122,9 @@ class handler:
 
 
   def _oauth2_init(self, provider):
-    """Step 1 of oauth 2.0: init the oauth 2.0 login flow for web
-    Send users to login page of provider (like Google or Facebook) for
-    authentication and ask authorization of user data.
-    """
+    '''
+    Google o Facebook muestran su pagina de inicio de sesion para autenticar usuarios
+    '''
     self._check_provider(provider)
 
     args = {
@@ -166,6 +146,7 @@ class handler:
     Case 2) If auth ok, get access_token first, and then use the access_token to
             retrieve user profile.
     """
+    
     self._check_provider(provider)
 
     # check whether auth is ok, if not ok, raise Exception.
