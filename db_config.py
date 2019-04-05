@@ -1,5 +1,9 @@
 import web
 
+'''
+Configurar los parametros para una base de datos localhost
+'''
+# Base de datos local
 db_host = 'localhost'
 db_name = 'kuorra_login_google'
 db_user = 'kuorra_google'
@@ -15,8 +19,10 @@ db_localhost = web.database(
     port = db_port
     )
 
-
-# Cloud host config
+'''
+Configurar los parametros para una base de datos remota
+'''
+# Base de datos en la nube
 db_host_cloud = 'remote_server'
 db_name_cloud = 'remote_db_name'
 db_user_cloud = 'remote_user'
