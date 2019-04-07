@@ -31,7 +31,7 @@ CREATE TABLE logs(
 
 INSERT INTO users (user, privilege, status, username, email, other_data, user_hash)
 VALUES 
-('your_email@gmail.com', 0, 1, 'your name', 'another email','administrador', MD5(concat('your_email@gmail.com', 'kuorra_key', '2016/06/04'))),
+('your_email@gmail.com', 0, 1, 'your name', 'another email','administrador', MD5(concat('your_email@gmail.com', 'kuorra_key', '2016/06/04')));
 
 CREATE USER 'kuorra_google'@'localhost' IDENTIFIED BY 'kuOrra.2018';
 GRANT ALL PRIVILEGES ON kuorra_login_google.* TO 'kuorra_google'@'localhost';
