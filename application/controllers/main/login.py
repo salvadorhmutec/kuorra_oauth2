@@ -25,7 +25,7 @@ class handler(auth.handler):
 
     def on_signin(self, provider, profile):
         '''
-        Una vez realizada la autenticación por parte de Google
+        Una vez realizada la autenticacion por parte de Google
         se crear una cookie en el navegador con el "profile" perfil del
         usuario que inicio sesion.
         Los datos almacenados en la cookie permiten verificar si el usuario 
@@ -60,7 +60,7 @@ class Login:
             # url de la imagen del usuario que se autentico
             picture = profile['picture']
             '''
-            El siguiente código verifica si el email del usuario que se autentico
+            El siguiente codigo verifica si el email del usuario que se autentico
             con google esta almacenado en la base de datos del proyecto.
             '''
             # user_authenticated, si el usuario existe en nuestro sistema regresa los datos el usuario
