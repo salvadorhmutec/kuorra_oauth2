@@ -43,3 +43,14 @@ Kuorra is a Web.py Microframework Frontend, use kuorra to create a MVC skeleton 
     - This file can be used for:
         1. Validate user for the system.
         2. Register a new user
+        
+6. Check in app.py the next parameters for remote and local connection
+
+remote = True # True = remote connection False= localhost
+
+if remote is True: # Config remote database and remote oauth host
+    db = database.db_cloud
+    host_config = 'http://proyect.herokuapp.com/auth/%s/callback'
+elif remote is False: # Config local database and local oauth host
+    db = database.db_localhost
+    host_config =  'http://localhost:8080/auth/%s/callback'
